@@ -1,10 +1,15 @@
-import SunEditor from "@/components/SunEditor";
+import dynamic from "next/dynamic";
 import {FC} from "react"
+
+const EditorWrapSsr = dynamic(() => import("@/components/Editor"), {
+    ssr: false,
+  });
+
 
 const index: FC = () => {
   return (
     <div>
-      <SunEditor />
+      <EditorWrapSsr />
     </div>
   )
 };
